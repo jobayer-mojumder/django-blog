@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% endif %}
+
+    <form method="post" action="{% url 'cadmin_login' %}">
+        {% csrf_token %}
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" value="Save Page" />
+    </form>
+
+</body>
+</html>
